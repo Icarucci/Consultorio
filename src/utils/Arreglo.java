@@ -61,10 +61,16 @@ public class Arreglo {
         return nuevo;
     }
     /*ORDENAMIENTOS*/
-    public static Persona[] ordenaPersonas(Persona[]arreglo){
-        for(int i=0;i<arreglo.length;i++){
+    /**
+     * METODO QUE RECIBE UN ARREGLO DE PERSONAS Y LO DEVUELVE ORDENADO POR APELLIDO.
+     * burbujeo
+     * @param arreglo
+     * @return arreglo ordenado por apellido
+     */
+    public static Persona[] ordenaPersonasApellido(Persona[]arreglo){
+        for(int i=0;i<arreglo.length-1;i++){
             for(int j=0;j<arreglo.length-1;j++){
-                if((arreglo[j].getNombre().compareTo(arreglo[j+1].getNombre()))>0){
+                if((arreglo[j].getApellido().compareTo(arreglo[j+1].getApellido()))>0){
                     Persona aux = arreglo[j];
                     arreglo[j] = arreglo[j+1];
                     arreglo[j+1] = aux;
@@ -73,5 +79,61 @@ public class Arreglo {
         }
         return arreglo;
     }
-    
+    /**
+     * METODO QUE RECIBE UN ARREGLO DE PERSONAS Y LO DEVUELVE ORDENADO POR SU ID.
+     * burbujeo
+     * @param arreglo
+     * @return arreglo ordenado por ID
+     */
+    public static Persona[] ordenaPersonasID(Persona[]arreglo){
+        for(int i=0;i<arreglo.length-1;i++){
+            for(int j=0;j<arreglo.length-1;j++){
+                if((arreglo[j].getId().compareTo(arreglo[j+1].getId()))>0){
+                    Persona aux = arreglo[j];
+                    arreglo[j] = arreglo[j+1];
+                    arreglo[j+1] = aux;
+                }
+            }
+        }
+        return arreglo;
+    }
+
+    /*BUSQUEDA BINARIA */
+    /**
+     * METODO DE BUSQUEDA BINARIA DE PERSONAS A PARTIR DE SU ID.
+     * @param arreglo de Persona ordenado por ID
+     * @param id
+     * @return objeto Persona o Null.
+     */
+    public static Persona buscaPersonaId(Persona[]arreglo,String id){
+        int inicio = 0;
+        int fin = arreglo.length-1;
+        while(inicio<=fin){
+            int medio = inicio+(fin-inicio)/2;
+            if(arreglo[medio].getId().compareTo(id)==0){
+                return arreglo[medio];
+            }
+            if(arreglo[medio].getId().compareTo(id)<0){
+                inicio=medio+1;
+            }else{
+                fin=medio-1;
+            }
+        }
+        return null;
+    }
+    /**
+     * METODO DE BUSQUEDA POR APELLIDO
+     * @param arreglo
+     * @param apellido
+     * @return objeto Persona o Null
+     */
+    public static Persona buscarPersonaApellido(Persona[]arreglo,String apellido){
+        Persona retorno = null;
+        for(int i=0;i<arreglo.length;i++){
+            if(arreglo[i].getApellido().compareTo(apellido)==0){
+                retorno = arreglo[i];
+            }
+        }
+        return retorno;
+    }
 }
