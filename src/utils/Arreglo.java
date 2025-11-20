@@ -1,8 +1,8 @@
 package utils;
 
-import Objetos.Persona;
-import Objetos.Puesto;
-import Objetos.Turno;
+import objetos.Persona;
+import objetos.Puesto;
+import objetos.Turno;
 
 /*CLASE UTILITARIA PARA GESTIONAR LOS ARREGLOS.*/
 public class Arreglo {
