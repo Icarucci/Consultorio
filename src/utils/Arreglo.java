@@ -26,7 +26,7 @@ public class Arreglo {
      * @param arreglo
      * @return arreglo de Turno con una posicion mas
      */
-    public static Turno[] agregarPosicion(Turno[]arreglo, Turno turno){
+    public static Turno[] agregarTurno(Turno[]arreglo, Turno turno){
         Turno [] nuevo = new Turno[arreglo.length+1];
         for(int i=0;i<arreglo.length;i++){
             nuevo[i]=arreglo[i];
@@ -39,7 +39,7 @@ public class Arreglo {
      * @param arreglo
      * @return arreglo de Puesto con una posicion mas
      */
-    public static Puesto[] agregarPosicion(Puesto[]arreglo,Puesto puesto){
+    public static Puesto[] agregarPuesto(Puesto[]arreglo,Puesto puesto){
         Puesto [] nuevo = new Puesto[arreglo.length+1];
         for(int i=0;i<arreglo.length;i++){
             nuevo[i]=arreglo[i];
@@ -52,7 +52,7 @@ public class Arreglo {
      * @param arreglo
      * @return arreglo de Turno con una posicion mas
      */
-    public static String[] agregarPosicion(String[]arreglo,String cadena){
+    public static String[] agregarString(String[]arreglo,String cadena){
         String [] nuevo = new String[arreglo.length+1];
         for(int i=0;i<arreglo.length;i++){
             nuevo[i]=arreglo[i];
