@@ -13,7 +13,7 @@ public class Arreglo {
      * @param arreglo
      * @return arreglo de Persona con una posicion mas
      */
-    public static Persona[] agregarPosicion(Persona[]arreglo,Persona persona){
+    public static Persona[] agregarPersona(Persona[]arreglo,Persona persona){
         Persona [] nuevo = new Persona[arreglo.length+1];
         for(int i=0;i<arreglo.length;i++){
             nuevo[i]=arreglo[i];

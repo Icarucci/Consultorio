@@ -1,5 +1,6 @@
 package view;
 
+import Controller.PacienteController;
 import objetos.Institucion;
 import utils.IO;
 
@@ -38,10 +39,13 @@ public class Visualizacion {
     public void opcionMenuPacientes(){
         boolean atras = false;
         do {
-            opcionMenuPacientes = IO.opcionSelect("Pacientes", "0. Atras", 5);
+            opcionMenuPacientes = IO.opcionSelect("Pacientes", "1.Nuevo paciente\n0. Atras", 5);
             switch (opcionMenuPacientes) {
                 case 0:
                     atras = true;
+                    break;
+                case 1:
+                    PacienteController.nuevoPaciente(inst);
                     break;
                 default:
                     break;
