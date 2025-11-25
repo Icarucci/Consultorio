@@ -30,6 +30,43 @@ public class IO {
         } while (!condicion);
         return retorno;
     }
+    /**
+     * METODO PARA E INGRESO DE UN ENTERO POSITIVO
+     * @param titulo
+     * @param mensaje
+     * @return entero positivo
+     */
+    public static int inputIntegerPositive(String titulo,String mensaje){
+        boolean condicion = false;
+        int retorno = 0;
+        do { 
+            try {
+                retorno = Integer.parseInt(JOptionPane.showInputDialog(null,mensaje,titulo,1));
+                if(retorno>0){
+                    condicion = true;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Valor ingresado no valido","Error",0);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Error en el ingreso","Error",0);
+            }
+        } while (!condicion);
+        return retorno;
+    }
+
+    public static boolean inputBoolean(String titulo,String mensaje){
+        boolean condicion = false;
+        boolean retorno = false;
+        do { 
+            try {
+                retorno = Boolean.parseBoolean(JOptionPane.showInputDialog(null,mensaje,titulo,1));
+                condicion = true;
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Error en el ingreso","Error",0);
+            }
+        } while (!condicion);
+        return retorno;
+    }
 
     /**
      * METODO PARA EL INPUT DE UN REAL POSITIVO.
