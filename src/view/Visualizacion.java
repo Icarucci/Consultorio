@@ -1,7 +1,7 @@
 package view;
 
-import Controller.PacienteController;
 import objetos.Institucion;
+import objetos.Paciente;
 import utils.IO;
 
 public class Visualizacion {  
@@ -45,7 +45,15 @@ public class Visualizacion {
                     atras = true;
                     break;
                 case 1:
-                    PacienteController.nuevoPaciente(inst);
+                    String nombre = IO.inputString("Paciente", "Ingrese nombre");
+                    String apellido = IO.inputString("Paciente", "Ingrese apellido");
+                    String id = IO.inputString("Paciente", "Ingrese ID");
+                    String direccion = IO.inputString("Paciente", "Ingrese direccion");
+                    String obraSocial = IO.inputString("Paciente", "Ingrese Obra Social");
+                    int sesionesTotales = IO.inputIntegerPositive("Paciente", "Ingrese cantidad de sesiones");
+                    boolean cronico = IO.inputBoolean("Paciente", "Es cronico (true/false)");
+                    Paciente paciente = new Paciente(nombre,apellido,id,direccion,obraSocial,sesionesTotales,cronico);
+                    /** TODO // Falta agregado del paciente a la institucion cuando este lista la clase Institucion */
                     break;
                 default:
                     break;
